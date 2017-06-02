@@ -33,3 +33,13 @@ rake db:migrate
 
 See on http://localhost:3000
 
+## Deploy
+
+Reference `config/application.yml.example`
+
+Create `config/application.yml`
+
+
+```bash
+rake db:migrate
+```
