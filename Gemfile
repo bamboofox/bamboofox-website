@@ -55,3 +55,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'figaro'
 gem 'rubocop', require: false
+gem 'rails_best_practices', require: false
+gem 'rails_best_practices-rake_task', require: false
