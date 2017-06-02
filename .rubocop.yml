@@ -1,0 +1,32 @@
+AllCops:
+  Exclude:
+    - 'db/migrate/*'
+    - 'bin/**/*'
+    - 'vendor/**/*'
+    - 'node_modules/**/*'
+Rails:
+  Enabled: true
+Rails/HasAndBelongsToMany:
+  Enabled: false
+Bundler/OrderedGems:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
+Style/ConditionalAssignment:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/Next:
+  Enabled: false
+Style/GuardClause:
+    Enabled: false
+Metrics/LineLength:
+  Enabled: false
+Metrics/BlockLength:
+  Enabled: false
+Metrics/MethodLength:
+  Enabled: false
+Metrics/AbcSize:
+  Enabled: false
