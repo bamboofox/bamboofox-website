@@ -4,4 +4,4 @@
 require_relative 'config/application'
 
 Rails.application.load_tasks
-task default: [:rubocop]
+task default: [:rubocop, :rails_best_practices]
