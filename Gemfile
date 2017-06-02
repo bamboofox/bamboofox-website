@@ -57,3 +57,5 @@ gem 'figaro'
 gem 'rubocop', require: false
 gem 'rails_best_practices', require: false
 gem 'rails_best_practices-rake_task', require: false
+
+gem 'devise'
