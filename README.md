@@ -39,7 +39,35 @@ Reference `config/application.yml.example`
 
 Create `config/application.yml`
 
+### Setup seed data and compile assets
 
 ```bash
-rake db:migrate
+bundle install
+RAILS_ENV=production rake db:reset DISABLE_DATABASE_ENVIRONMENT_CHECK=1
+RAILS_ENV=production rake assets:precompile
+```
+
+## Tests
+
+### Run RuboCop
+
+```bash
+rake rubocop
+```
+
+### Auto-correct RuboCop offenses
+```bash
+rake rubocop:auto_correct
+```
+
+### Run Rails Best Practice
+
+```bash
+rake rails_best_practices
+```
+
+### Format erb files
+
+```bash
+find . -name '*.erb' | xargs htmlbeautifier
 ```
