@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_170_626_052_604) do
+ActiveRecord::Schema.define(version: 20_170_626_053_921) do
+  create_table 'courses', force: :cascade do |t|
+    t.text 'name'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+  end
+
   create_table 'roles', force: :cascade do |t|
     t.string 'name'
     t.string 'resource_type'
