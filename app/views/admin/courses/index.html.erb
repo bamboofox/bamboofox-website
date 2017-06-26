@@ -1,0 +1,15 @@
+<%= link_to 'New Course', new_admin_course_path %>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @courses.each do |course| %>
+      <tr>
+        <td><%= link_to course.name, course %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

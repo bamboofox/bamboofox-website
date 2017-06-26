@@ -1,0 +1,9 @@
+<%= form_for [:admin, course] do |f| %>
+  <div class="form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>
