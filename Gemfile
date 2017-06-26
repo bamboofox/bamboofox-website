@@ -59,3 +59,4 @@ gem 'rails_best_practices-rake_task', require: false
 gem 'devise'
 gem 'cancancan'
 gem 'rolify'
+gem 'semantic-ui-sass', git: 'https://github.com/doabit/semantic-ui-sass.git'
