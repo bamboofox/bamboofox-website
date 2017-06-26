@@ -1,4 +1,4 @@
-class Admin::CoursesController < ApplicationController
+class Admin::CoursesController < AdminController
   load_and_authorize_resource
   layout 'admin'
 

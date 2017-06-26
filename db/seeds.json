@@ -1,0 +1,20 @@
+{
+	"users": [
+		{
+			"id": 1,
+			"email": "admin@gmail.com",
+			"password": "adminadmin"
+		},
+		{
+			"id": 2,
+			"email": "student@gmail.com",
+			"password": "student"
+		}
+	],
+	"courses": [
+		{
+			"id": 1,
+			"name": "bamboofox training"
+		}
+        ]
+}
