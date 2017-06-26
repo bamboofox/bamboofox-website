@@ -1,5 +1,5 @@
 <%= link_to 'New Course', new_admin_course_path %>
-<table>
+<table class="ui table">
   <thead>
     <tr>
       <th>Name</th>
@@ -8,7 +8,7 @@
   <tbody>
     <% @courses.each do |course| %>
       <tr>
-        <td><%= link_to course.name, course %></td>
+        <td><%= link_to course.name, admin_course_path(course) %></td>
       </tr>
     <% end %>
   </tbody>
