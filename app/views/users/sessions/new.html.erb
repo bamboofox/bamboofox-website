@@ -2,11 +2,17 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "ui form"}) do |f| %>
   <div class="field">
     <%= f.label :email %>
-    <%= f.email_field :email, autofocus: true %>
+    <div class="ui left icon input">
+      <%= f.email_field :email, autofocus: true %>
+      <i class="mail icon"></i>
+    </div>
   </div>
   <div class="field">
     <%= f.label :password %>
-    <%= f.password_field :password, autocomplete: "off" %>
+    <div class="ui left icon input">
+      <%= f.password_field :password, autocomplete: "off" %>
+      <i class="lock icon"></i>
+    </div>
   </div>
   <% if devise_mapping.rememberable? -%>
     <div class="field">

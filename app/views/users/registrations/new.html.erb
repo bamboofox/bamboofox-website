@@ -2,19 +2,28 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "ui form"}) do |f| %>
   <%= devise_error_messages! %>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.label :email %>
+    <div class="ui left icon input">
+      <%= f.email_field :email, autofocus: true %>
+      <i class="mail icon"></i>
+    </div>
   </div>
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <% end %>
+    <div class="ui left icon input">
+      <%= f.password_field :password, autocomplete: "off" %>
+      <i class="lock icon"></i>
+    </div>
   </div>
   <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.label :password_confirmation %>
+    <div class="ui left icon input">
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      <i class="lock icon"></i>
+    </div>
   </div>
   <div class="actions">
     <%= f.submit "Sign up", class: "ui positive button"%>

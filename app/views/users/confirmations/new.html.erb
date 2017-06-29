@@ -2,8 +2,11 @@
 <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post, class: "ui form" }) do |f| %>
   <%= devise_error_messages! %>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+    <%= f.label :email %>
+    <div class="ui left icon input">
+      <%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+      <i class="mail icon"></i>
+    </div>
   </div>
   <div class="actions">
     <%= f.submit "Resend confirmation instructions", class: "positive ui button" %>
