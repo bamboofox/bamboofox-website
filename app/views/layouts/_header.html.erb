@@ -1,3 +1,21 @@
 <header class="ui menu">
-  <%= link_to "Courses", courses_path, class: "item" %>
+  <div class="left menu">
+    <%= link_to "Courses", courses_path, class: "item" %>
+  </div>
+  <div class="right menu">
+    <% if !current_user %>
+      <%= link_to "Login", new_user_session_path, class: "item" %>
+      <%= link_to "Register", new_user_registration_path, class: "item" %>
+    <% else %>
+      <%= link_to "Admin", admin_root_path, class: "item" %>
+      <div class="ui simple dropdown item">
+        Users
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          <%= link_to "Profile", edit_user_registration_path, class: "item" %>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "item" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </header>
