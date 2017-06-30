@@ -1,0 +1,2 @@
+class ChallengeSubmission < ApplicationRecord
+end

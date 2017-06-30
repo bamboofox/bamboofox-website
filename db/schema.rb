@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_170_626_053_921) do
+ActiveRecord::Schema.define(version: 20_170_630_143_831) do
+  create_table 'challenge_submissions', force: :cascade do |t|
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+  end
+
+  create_table 'challenges', force: :cascade do |t|
+    t.string 'name'
+    t.text 'description'
+    t.string 'flag'
+    t.integer 'point'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.integer 'course_id'
+    t.index ['course_id'], name: 'index_challenges_on_course_id'
+  end
+
   create_table 'courses', force: :cascade do |t|
     t.text 'name'
     t.datetime 'created_at', null: false
