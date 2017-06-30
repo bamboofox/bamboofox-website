@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_170_630_143_831) do
+ActiveRecord::Schema.define(version: 20_170_630_144_438) do
   create_table 'challenge_submissions', force: :cascade do |t|
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
+    t.integer 'course_id'
+    t.integer 'user_id'
+    t.integer 'challenge_id'
+    t.index ['challenge_id'], name: 'index_challenge_submissions_on_challenge_id'
+    t.index ['course_id'], name: 'index_challenge_submissions_on_course_id'
+    t.index ['user_id'], name: 'index_challenge_submissions_on_user_id'
   end
 
   create_table 'challenges', force: :cascade do |t|
