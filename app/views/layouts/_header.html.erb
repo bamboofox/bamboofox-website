@@ -4,16 +4,31 @@
   </div>
   <div class="right menu">
     <% if !current_user %>
-      <%= link_to "Login", new_user_session_path, class: "item" %>
-      <%= link_to "Register", new_user_registration_path, class: "item" %>
+      <%= link_to new_user_session_path, class: "item" do %>
+        <i class="sign in icon"></i>
+        Login
+      <% end %>
+      <%= link_to new_user_registration_path, class: "item" do %>
+        <i class="write icon"></i>
+        Register
+      <% end %>
     <% else %>
-      <%= link_to "Admin", admin_root_path, class: "item" %>
+      <%= link_to admin_root_path, class: "item" do %>
+        <i class="spy icon"></i>
+        Admin
+      <% end %>
       <div class="ui simple dropdown item">
-        Users
-        <i class="dropdown icon"></i>
+        <i class="setting icon"></i>
+        Setting
         <div class="menu">
-          <%= link_to "Profile", edit_user_registration_path, class: "item" %>
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "item" %>
+          <%= link_to edit_user_registration_path, class: "item" do %>
+            <i class="edit icon"></i>
+            Edit Profile
+          <% end %>
+          <%= link_to destroy_user_session_path, method: :delete, class: "item" do %>
+            <i class="sign out icon"></i>
+            Logout
+          <% end %>
         </div>
       </div>
     <% end %>
