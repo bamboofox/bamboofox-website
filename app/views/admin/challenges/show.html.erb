@@ -1,0 +1,22 @@
+<h1><%= @challenge.name %> [<%= @challenge.point %>]</h1>
+<h2>Description</h2>
+<%= simple_format(@challenge.description) %>
+<%= render 'submit_flag_form', course: @course, challenge: @challenge %>
+<table class="ui table">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Last time</th>
+      <th>Point</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @submissions.reverse.each do |submission| %>
+      <tr>
+        <td><%= link_to submission.user.id, submission.user %></td>
+        <td><%= submission.created_at.to_s[0..-5] %></td>
+        <td><%= submission.challenge.point %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

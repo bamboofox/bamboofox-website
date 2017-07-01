@@ -1,1 +1,11 @@
 <h1><%= @course.name %></h1>
+<div class="ui two column grid">
+  <div class="column">
+    <h2>Challenges</h2>
+    <%= link_to 'Challenges', admin_course_challenges_path(@course), class: "ui button" %>
+  </div>
+  <div class="column">
+    <h2>Rank</h2>
+    <%= link_to 'Rank', admin_course_rank_path(@course), class: "ui button" %>
+  </div>
+</div>

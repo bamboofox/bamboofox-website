@@ -1,0 +1,9 @@
+<%= form_with url: submit_flag_course_challenge_path(course, challenge), class: "ui form" do |f| %>
+  <div class="field">
+    <%= f.label :flag %>
+    <div class="ui action input">
+      <%= f.text_field :flag, placeholder: "BAMBOOFOX{.......}" %>
+      <%= f.submit "Submit", class: "ui positive submit button" %>
+    </div>
+  </div>
+<% end %>

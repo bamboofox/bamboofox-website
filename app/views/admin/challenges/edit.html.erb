@@ -1,0 +1,4 @@
+<%= render 'form', course: @course, challenge: @challenge %>
+<p>
+  <%= button_to 'Delete', admin_course_challenge_path(@course, @challenge), method: :delete, data: { confirm: 'Are you sure?' }, class: 'ui negative button' %>
+</p>

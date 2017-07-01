@@ -1,0 +1,21 @@
+<%= form_with model: [:admin, course, challenge], class: "ui form" do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :point %>
+    <%= f.number_field :point %>
+  </div>
+  <div class="field">
+    <%= f.label :flag %>
+    <%= f.text_field :flag %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit", class: "ui positive button" %>
+  </div>
+<% end %>

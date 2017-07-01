@@ -1,0 +1,24 @@
+<h1>Challenges</h1>
+<table class="ui table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th> </th>
+      <th>Name</th>
+      <th>Point</th>
+      <th>Solved</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @challenges.each_with_index do |challenge, i| %>
+      <tr style="<% if ChallengeSubmission.find_by(user_id: current_user.id, challenge_id: challenge.id) != nil %>background: #BCF5A9<% end %>">
+        <td><%= i+1 %></td>
+        <td><% if ChallengeSubmission.find_by(user_id: current_user.id, challenge_id: challenge.id) != nil %>✓ <% end %></td>
+        <td><%= link_to challenge.name, course_challenge_path(challenge.course,challenge) %></td>
+        <td><%= challenge.point %></td>
+        <td><%= ChallengeSubmission.where(challenge_id: challenge.id).count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'Back to Course', course_path(@course), class: "ui button" %>
