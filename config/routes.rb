@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   # User
   resources :users, only: [:show]
 
+  # Rank
+  resources :rank, only: [:show]
+
   # Nested route
   resources :courses, only: %i[index show] do
     # Challenge
@@ -15,10 +18,16 @@ Rails.application.routes.draw do
         post 'submit' => :submit, as: 'submit_flag'
       end
     end
+
+    # Rank
+    resources :rank, only: [:show]
   end
 
   namespace :admin do
     root 'courses#index'
+
+    # Rank
+    resources :rank, only: [:show]
 
     # Nested route
     resources :courses do
@@ -28,6 +37,9 @@ Rails.application.routes.draw do
           post 'submit' => :submit, as: 'submit_flag'
         end
       end
+
+      # Rank
+      resources :rank, only: [:show]
     end
   end
 end
