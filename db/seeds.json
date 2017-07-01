@@ -1,20 +1,30 @@
 {
-	"users": [
-		{
-			"id": 1,
-			"email": "admin@gmail.com",
-			"password": "adminadmin"
-		},
-		{
-			"id": 2,
-			"email": "student@gmail.com",
-			"password": "student"
-		}
-	],
-	"courses": [
-		{
-			"id": 1,
-			"name": "bamboofox training"
-		}
-        ]
+  "users": [
+    {
+      "id": 1,
+      "email": "admin@gmail.com",
+      "password": "adminadmin"
+    },
+    {
+      "id": 2,
+      "email": "student@gmail.com",
+      "password": "student"
+    }
+  ],
+  "courses": [
+    {
+      "id": 1,
+      "name": "bamboofox training"
+    }
+  ],
+  "challenges": [
+    {
+      "id": 1,
+      "name": "magic",
+      "description": "It's magic time",
+      "flag": "FLAG{magic}",
+      "point": 50,
+      "course_id": 1
+    }
+  ]
 }

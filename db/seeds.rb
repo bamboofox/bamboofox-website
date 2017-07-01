@@ -21,6 +21,10 @@ json['courses'].each do |course|
   Course.create!(course)
 end
 
+json['challenges'].each do |challenge|
+  Challenge.create!(challenge)
+end
+
 # Add roles
 
 user = User.find(1)
