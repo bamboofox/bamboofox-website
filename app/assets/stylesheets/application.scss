@@ -1,0 +1,10 @@
+@import "semantic-ui";
+
+body{
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+article{
+  flex: 1;
+}
