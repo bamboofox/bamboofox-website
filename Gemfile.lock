@@ -61,6 +61,10 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    carrierwave (1.0.0)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
     childprocess (0.7.0)
       ffi (~> 1.0, >= 1.0.11)
     code_analyzer (0.4.7)
@@ -229,6 +233,7 @@ DEPENDENCIES
   byebug
   cancancan
   capybara (~> 2.13)
+  carrierwave (~> 1.0)
   coffee-rails (~> 4.2)
   devise
   figaro
