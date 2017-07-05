@@ -1,0 +1,26 @@
+<h1>Profile</h1>
+<h2 class="ui header">
+  <%= profile_avatar @user, class: "ui rounded image" %>
+  <div class="content">
+    <%= simple_format @user.email %>
+  </div>
+</h2>
+<h2>Challenge Submissions</h2>
+<table class="ui table">
+  <thead>
+    <tr>
+      <th>Challenge</th>
+      <th>Point</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @user.challenge_submissions.each do |submission| %>
+      <tr>
+        <td><%= link_to submission.challenge.name, course_challenge_path(submission.course, submission.challenge) %></td>
+        <td><%= submission.challenge.point %></td>
+        <td><%= submission.created_at.to_s %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -13,6 +13,10 @@
         Register
       <% end %>
     <% else %>
+      <%= link_to current_user, class: "item" do %>
+        <%= icon_avatar current_user,class: "ui avatar image" %>
+        <%= current_user.email %>
+      <% end %>
       <%= link_to root_path, class: "item" do %>
         <i class="student icon"></i>
         Normal
