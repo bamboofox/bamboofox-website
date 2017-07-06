@@ -15,7 +15,11 @@
     {
       "id": 1,
       "name": "bamboofox training"
-    }
+    },
+		{
+			"id": 2,
+			"name": "secure programming"
+		}
   ],
   "challenges": [
     {
@@ -24,7 +28,70 @@
       "description": "It's magic time",
       "flag": "FLAG{magic}",
       "point": 50,
-      "course_id": 1
-    }
-  ]
+      "course_id": 1,
+			"attachments": [
+				"magic"
+			]
+    },
+		{
+			"id": 2,
+			"name": "ROP",
+			"description": "Try to cat the flag",
+			"flag": "FLAG{ROP}",
+			"point": 100,
+			"attachments": [
+				"rop"
+			],
+			"course_id": 1
+		},
+		{
+			"id": 3,
+			"name": "gdb",
+			"description": "Find vulnerable function",
+			"flag": "FLAG{gdb}",
+			"point": 50,
+			"attachments": [
+				"httpd.c"
+			],
+			"course_id": 2
+		},
+		{
+			"id": 4,
+			"name": "pickle",
+			"description": "Python pickle vulnerable",
+			"flag": "FLAG{pickle}",
+			"point": 100,
+			"attachments": [
+				"spam.py",
+				"pickle.py"
+			],
+			"course_id": 2
+		}
+  ],
+	"materials": [
+		{
+			"id": 1,
+			"attachment": "explosion.jpg",
+			"name": "binary exploit guide",
+			"course_id": 1
+		},
+		{
+			"id": 2,
+			"attachment": "OTGv4.pdf",
+			"name": "web web web QAQ",
+			"course_id": 1
+		},
+		{
+			"id": 3,
+			"attachment": "gdb.txt",
+			"name": "gdb handbook",
+			"course_id": 2
+		},
+		{
+			"id": 4,
+			"attachment": "qira.png",
+			"name": "qira handbook",
+			"course_id": 2
+		}
+	]
 }

@@ -22,7 +22,24 @@ json['courses'].each do |course|
 end
 
 json['challenges'].each do |challenge|
-  Challenge.create!(challenge)
+  attachments = challenge['attachments']
+  challenge.delete :attachments
+
+  challenge = Challenge.new(challenge)
+  attachments.map! do |attachment|
+    File.new(File.join('test/fixtures/files/', attachment))
+  end
+  challenge.attachments = attachments
+  challenge.save!
+end
+
+json['materials'].each do |material|
+  attachment = material['attachment']
+  material.delete :attachment
+
+  material = Material.new(material)
+  material.attachment = File.new(File.join('test/fixtures/files/', attachment))
+  material.save!
 end
 
 # Add roles
