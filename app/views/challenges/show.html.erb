@@ -1,6 +1,9 @@
 <h1><%= @challenge.name %> [<%= @challenge.point %>]</h1>
 <h2>Description</h2>
 <%= simple_format(@challenge.description) %>
+<% @challenge.attachments.each_with_index do |attachment, index| %>
+  <%= link_to File.basename(attachment.url), attachment.url, target: "_blank" %>
+<% end %>
 <%= render 'submit_flag_form', course: @course, challenge: @challenge %>
 <table class="ui table">
   <thead>

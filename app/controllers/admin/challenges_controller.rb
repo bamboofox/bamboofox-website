@@ -46,6 +46,6 @@ class Admin::ChallengesController < AdminController
   private
 
   def challenge_params
-    params.require(:challenge).permit(:name, :description, :point, :flag)
+    params.require(:challenge).permit(:name, :description, :point, :flag, attachments: [])
   end
 end

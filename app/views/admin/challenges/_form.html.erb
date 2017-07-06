@@ -15,6 +15,10 @@
     <%= f.label :flag %>
     <%= f.text_field :flag %>
   </div>
+  <div class="field">
+    <%= f.label :attachments %>
+    <%= f.file_field :attachments, multiple: true %>
+  </div>
   <div class="actions">
     <%= f.submit "Submit", class: "ui positive button" %>
   </div>
