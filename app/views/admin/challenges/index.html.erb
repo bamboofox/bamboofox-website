@@ -8,6 +8,7 @@
       <th>Name</th>
       <th>Point</th>
       <th>Solved</th>
+      <th>Edit</th>
     </tr>
   </thead>
   <tbody>
@@ -18,6 +19,7 @@
         <td><%= link_to challenge.name, admin_course_challenge_path(challenge.course,challenge) %></td>
         <td><%= challenge.point %></td>
         <td><%= ChallengeSubmission.where(challenge_id: challenge.id).count %></td>
+        <td><%= link_to 'Edit', edit_admin_course_challenge_path(challenge.course,challenge), class: "ui button" %></td>
       </tr>
     <% end %>
   </tbody>
