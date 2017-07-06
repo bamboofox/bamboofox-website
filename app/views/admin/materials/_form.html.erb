@@ -1,0 +1,13 @@
+<%= form_with model: [:admin, course, material], class: "ui form" do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :attachment %><br>
+    <%= f.file_field :attachment %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit", class: "ui positive button" %>
+  </div>
+<% end %>

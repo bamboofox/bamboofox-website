@@ -1,0 +1,18 @@
+<h1>Materials</h1>
+<%= link_to 'New Material', new_admin_course_material_path(@course), class: 'ui positive button' %>
+<table class="ui table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Show</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @materials.each do |material| %>
+      <tr>
+        <td><%= material.name %></td>
+        <td><%= link_to 'Show', admin_course_material_path(@course, material) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

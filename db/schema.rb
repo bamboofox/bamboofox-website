@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_170_706_053_500) do
+ActiveRecord::Schema.define(version: 20_170_706_060_724) do
   create_table 'challenge_submissions', force: :cascade do |t|
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
@@ -38,6 +38,15 @@ ActiveRecord::Schema.define(version: 20_170_706_053_500) do
     t.text 'name'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
+  end
+
+  create_table 'materials', force: :cascade do |t|
+    t.string 'name'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.string 'attachment'
+    t.integer 'course_id'
+    t.index ['course_id'], name: 'index_materials_on_course_id'
   end
 
   create_table 'roles', force: :cascade do |t|

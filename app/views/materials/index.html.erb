@@ -1,0 +1,17 @@
+<h1>Materials</h1>
+<table class="ui table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Show</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @materials.each do |material| %>
+      <tr>
+        <td><%= material.name %></td>
+        <td><%= link_to 'Show', course_material_path(@course, material) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

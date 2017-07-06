@@ -19,6 +19,9 @@ Rails.application.routes.draw do
       end
     end
 
+    # Material
+    resources :materials, only: %i[index show]
+
     # Rank
     resources :rank, only: [:show]
   end
@@ -37,6 +40,9 @@ Rails.application.routes.draw do
           post 'submit' => :submit, as: 'submit_flag'
         end
       end
+
+      # Material
+      resources :materials
 
       # Rank
       resources :rank, only: [:show]
