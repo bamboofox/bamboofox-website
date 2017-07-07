@@ -2,3 +2,9 @@
 secret_key_base: 73fd0783500cc42096f163859b5062376ccb90416a9bf920c89e43981986493029d20b58e088fc04444d571829381aa5e246ce364b9c16830128eb10757e65a9
 host: bamboofox.nctucs.net
 mailer_sender: no-reply@bamboofox.nctucs.net
+facebook_id: facebook_id
+facebook_secret: facebook_secret
+github_id: github_id
+github_secret: github_secret
+google_id: google_id
+google_secret: google_secret
