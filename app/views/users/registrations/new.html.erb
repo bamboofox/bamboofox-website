@@ -32,6 +32,9 @@
   </div>
   <div class="actions">
     <%= f.submit "Sign up", class: "ui positive button"%>
+    <% if devise_mapping.omniauthable? %>
+      <%= omniauth_buttons(resource_class.omniauth_providers) %>
+    <% end %>
   </div>
 <% end %>
 <%= render "users/shared/links" %>

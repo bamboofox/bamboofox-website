@@ -45,7 +45,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
+    params[:user].delete :current_password if params[:user][:password].blank?
     devise_parameter_sanitizer.permit(:account_update, keys: %i[avatar avatar_cache remove_avatar])
+  end
+
+  def update_resource(resource, _params)
+    if account_update_params[:password].present?
+      resource.update_with_password(account_update_params)
+    else
+      resource.update_without_password(account_update_params)
+    end
   end
 
   # The path used after sign up.
