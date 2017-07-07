@@ -63,3 +63,7 @@ gem 'rolify'
 gem 'semantic-ui-sass', git: 'https://github.com/doabit/semantic-ui-sass.git'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick', require: false
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-github'
+gem 'omniauth-google-oauth2'
