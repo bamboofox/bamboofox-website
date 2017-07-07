@@ -1,0 +1,19 @@
+<h1>Ranks</h1>
+<table class="ui table">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Point</th>
+      <th>Last Submission</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user|  %>
+      <tr>
+        <td><%= link_to user.email, user %></td>
+        <td><%= user.total_point @course_id %></td>
+        <td><%= user.last_challenge_submission_time %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

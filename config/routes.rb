@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
 
   # Rank
-  resources :rank, only: [:show]
+  resource :rank, only: [:show]
 
   # Nested route
   resources :courses, only: %i[index show] do
@@ -23,14 +23,14 @@ Rails.application.routes.draw do
     resources :materials, only: %i[index show]
 
     # Rank
-    resources :rank, only: [:show]
+    resource :rank, only: [:show]
   end
 
   namespace :admin do
     root 'courses#index'
 
     # Rank
-    resources :rank, only: [:show]
+    resource :rank, only: [:show]
 
     # Nested route
     resources :courses do
@@ -45,7 +45,7 @@ Rails.application.routes.draw do
       resources :materials
 
       # Rank
-      resources :rank, only: [:show]
+      resource :rank, only: [:show]
     end
   end
 end
