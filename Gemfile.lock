@@ -69,6 +69,7 @@ GEM
       ffi (~> 1.0, >= 1.0.11)
     code_analyzer (0.4.7)
       sexp_processor
+    coderay (1.1.1)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -203,6 +204,7 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    redcarpet (3.4.0)
     require_all (1.4.0)
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
@@ -281,6 +283,7 @@ DEPENDENCIES
   cancancan
   capybara (~> 2.13)
   carrierwave (~> 1.0)
+  coderay
   coffee-rails (~> 4.2)
   devise
   figaro
@@ -297,6 +300,7 @@ DEPENDENCIES
   rails_best_practices
   rails_best_practices-rake_task
   rails_real_favicon
+  redcarpet
   rolify
   rubocop
   sass-rails (~> 5.0)

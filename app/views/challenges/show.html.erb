@@ -1,8 +1,8 @@
 <h1><%= @challenge.name %> [<%= @challenge.point %>]</h1>
 <h2>Description</h2>
-<%= simple_format(@challenge.description) %>
+<%= markdown @challenge.description %>
 <h2>Hint</h2>
-<%= simple_format(@challenge.hint) %>
+<%= markdown @challenge.hint %>
 <h2>Files</h2>
 <% @challenge.attachments.each_with_index do |attachment, index| %>
   <%= link_to File.basename(attachment.url), attachment.url, target: "_blank" %>
