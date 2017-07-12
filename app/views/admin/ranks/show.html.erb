@@ -10,7 +10,7 @@
   <tbody>
     <% @users.each do |user|  %>
       <tr>
-        <td><%= link_to user.email, user %></td>
+        <td><%= link_to user.name, user %></td>
         <td><%= user.total_point @course_id %></td>
         <td><%= user.last_challenge_submission_time %></td>
       </tr>

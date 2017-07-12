@@ -2,11 +2,13 @@
   "users": [
     {
       "id": 1,
+      "name": "admin",
       "email": "admin@gmail.com",
       "password": "adminadmin"
     },
     {
       "id": 2,
+      "name": "student",
       "email": "student@gmail.com",
       "password": "student"
     }

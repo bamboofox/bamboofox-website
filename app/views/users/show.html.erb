@@ -1,10 +1,22 @@
 <h1>Profile</h1>
-<h2 class="ui header">
-  <%= profile_avatar @user, class: "ui rounded image" %>
-  <div class="content">
-    <%= simple_format @user.email %>
+<div class="ui items">
+  <div class="item">
+    <div class="ui image">
+      <%= profile_avatar @user %>
+    </div>
+    <div class="content">
+      <div class="header">
+        <%= @user.name %>
+      </div>
+      <div class="meta">
+        Email: <%= @user.email %>
+      </div>
+      <div class="meta">
+        Score: <%= @user.total_point %>
+      </div>
+    </div>
   </div>
-</h2>
+</div>
 <h2>Challenge Submissions</h2>
 <table class="ui table">
   <thead>

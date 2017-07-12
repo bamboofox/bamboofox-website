@@ -16,7 +16,7 @@
   <tbody>
     <% @submissions.reverse.each do |submission| %>
       <tr>
-        <td><%= link_to submission.user.id, submission.user %></td>
+        <td><%= link_to submission.user.name, submission.user %></td>
         <td><%= submission.created_at.to_s[0..-5] %></td>
         <td><%= submission.challenge.point %></td>
       </tr>

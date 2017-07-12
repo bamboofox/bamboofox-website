@@ -42,6 +42,12 @@ json['materials'].each do |material|
   material.save!
 end
 
+# Add Challenge submissions
+ChallengeSubmission.create!(user_id: 2, challenge_id: 2, course_id: 1, created_at: 1.day.ago)
+ChallengeSubmission.create!(user_id: 2, challenge_id: 1, course_id: 1, created_at: 1.day.ago)
+ChallengeSubmission.create!(user_id: 1, challenge_id: 2, course_id: 1, created_at: 2.days.ago)
+ChallengeSubmission.create!(user_id: 1, challenge_id: 1, course_id: 1, created_at: 2.days.ago)
+
 # Add roles
 
 user = User.find(1)
