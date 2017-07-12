@@ -3,6 +3,7 @@
 <%= markdown @challenge.description %>
 <h2>Hint</h2>
 <%= markdown @challenge.hint %>
+<h2>Files</h2>
 <% @challenge.attachments.each_with_index do |attachment, index| %>
   <%= link_to File.basename(attachment.url), attachment.url, target: "_blank" %>
 <% end %>
