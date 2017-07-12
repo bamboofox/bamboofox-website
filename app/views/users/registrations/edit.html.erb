@@ -13,6 +13,13 @@
       <i class="mail icon"></i>
     </div>
   </div>
+  <div class="field">
+    <%= f.label :name %>
+    <div class="ui left icon input">
+      <%= f.text_field :name %>
+      <i class="user icon"></i>
+    </div>
+  </div>
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>

@@ -40,13 +40,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: %i[avatar avatar_cache remove_avatar])
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[avatar avatar_cache name])
   end
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
     params[:user].delete :current_password if params[:user][:password].blank?
-    devise_parameter_sanitizer.permit(:account_update, keys: %i[avatar avatar_cache remove_avatar])
+    devise_parameter_sanitizer.permit(:account_update, keys: %i[avatar avatar_cache name])
   end
 
   def update_resource(resource, _params)
