@@ -1,0 +1,22 @@
+<h1>Users</h1>
+<div class="ui items">
+  <table class="ui table">
+    <thead>
+      <tr>
+        <th>Avatar</th>
+        <th>Name</th>
+        <th>Point</th>
+        <th>Last Submission Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do | user | %>
+        <tr>
+          <td><%= profile_avatar user, class: "ui avatar image" %></td>
+          <td><%= link_to user.name, user  %></td>
+          <td><%= user.total_point  %></td>
+          <td><%= user.last_challenge_submission_time %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root 'courses#index'
 
   # User
-  resources :users, only: [:show]
+  resources :users, only: %i[index show]
 
   # Rank
   resource :rank, only: [:show]
