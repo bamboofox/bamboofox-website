@@ -1,5 +1,12 @@
 # bamboofox-website
 
+## Requirements
+
+```bash
+sudo apt install imagemagick
+sudo apt install libmysqlclient-dev
+```
+
 ## Ruby and Rails versions
 
 Ruby 2.4.0 or newer
