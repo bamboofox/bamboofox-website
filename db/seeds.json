@@ -28,6 +28,7 @@
       "id": 1,
       "name": "magic",
       "description": "It's magic time",
+      "hint": "",
       "flag": "FLAG{magic}",
       "point": 50,
       "course_id": 1,
@@ -39,6 +40,7 @@
 			"id": 2,
 			"name": "ROP",
 			"description": "Try to cat the flag",
+      "hint": "",
 			"flag": "FLAG{ROP}",
 			"point": 100,
 			"attachments": [
@@ -50,6 +52,7 @@
 			"id": 3,
 			"name": "gdb",
 			"description": "Find vulnerable function",
+      "hint": "",
 			"flag": "FLAG{gdb}",
 			"point": 50,
 			"attachments": [
@@ -61,6 +64,7 @@
 			"id": 4,
 			"name": "pickle",
 			"description": "Python pickle vulnerable",
+      "hint": "",
 			"flag": "FLAG{pickle}",
 			"point": 100,
 			"attachments": [
