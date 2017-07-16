@@ -5,6 +5,7 @@
     <tr>
       <th>Name</th>
       <th>Show</th>
+      <th>Edit</th>
     </tr>
   </thead>
   <tbody>
@@ -12,6 +13,7 @@
       <tr>
         <td><%= material.name %></td>
         <td><%= link_to 'Show', admin_course_material_path(@course, material) %></td>
+        <td><%= link_to 'Edit', edit_admin_course_material_path(@course, material), class: "ui button" %></td>
       </tr>
     <% end %>
   </tbody>
