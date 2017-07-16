@@ -27,6 +27,7 @@ class User < ApplicationRecord
 
   def self.from_omniauth(auth)
     joins(:identities).where(identities: { provider: auth.provider, uid: auth.uid }).first_or_initialize do |user|
+      user.name = auth.info.name
       user.email = auth.info.email
       user.remote_avatar_url = auth.info.image
       user.password = Devise.friendly_token[0, 20]
