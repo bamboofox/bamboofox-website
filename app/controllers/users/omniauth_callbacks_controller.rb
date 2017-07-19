@@ -13,6 +13,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   alias facebook all
   alias github all
   alias google_oauth2 all
+  alias nctu all
 
   def failure
     set_flash_message! :alert, :failure, kind: 'Oauth', reason: 'Login process terminated!'

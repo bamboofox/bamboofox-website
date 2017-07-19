@@ -9,3 +9,5 @@ github_id: github_id
 github_secret: github_secret
 google_id: google_id
 google_secret: google_secret
+nctu_id: nctu_id
+nctu_secret: nctu_secret

@@ -10,7 +10,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable,
          :validatable, :confirmable, :omniauthable,
-         omniauth_providers: %i[facebook github google_oauth2]
+         omniauth_providers: %i[facebook github google_oauth2 nctu]
 
   def last_challenge_submission_time
     @last_challenge_submission_time ||= challenge_submissions.last&.created_at || Time.current

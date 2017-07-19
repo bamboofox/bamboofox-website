@@ -17,6 +17,11 @@ module OmniauthHelper
           tag :i, class: 'google plus icon'
           'Google'
         end
+      when :nctu
+        link_to omniauth_authorize_path(resource_name, provider), class: 'ui nctu button' do
+          tag :i, class: 'nctu icon'
+          'Nctu'
+        end
       end
     end.join)
   end
