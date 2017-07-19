@@ -1,5 +1,7 @@
 # bamboofox-website
 
+[![build status][travis-image]][travis-url]
+
 ## Requirements
 
 ```bash
@@ -78,3 +80,6 @@ rake rails_best_practices
 ```bash
 find . -name '*.erb' | xargs htmlbeautifier
 ```
+
+[travis-image]: https://travis-ci.org/bamboofox/bamboofox-website.svg?branch=master
+[travis-url]: https://travis-ci.org/bamboofox/bamboofox-website
