@@ -1,22 +1,22 @@
 module ApplicationHelper
-  class CodeRayify < Redcarpet::Render::HTML
-    def block_code(code, language)
-      CodeRay.scan(code, language).div
-    end
-  end
-
   def markdown(text)
-    coderayified = CodeRayify.new(filter_html: true,
-                                  hard_wrap: true)
-    options = {
-      fenced_code_blocks: true,
-      no_intra_emphasis: true,
-      autolink: true,
-      strikethrough: true,
-      lax_html_blocks: true,
-      superscript: true
+    html_render_options = {
+      filter_html:     true, # no input tag or textarea
+      hard_wrap:       true,
+      link_attributes: { rel: 'nofollow' }
     }
-    markdown_to_html = Redcarpet::Markdown.new(coderayified, options)
-    sanitize markdown_to_html.render(text)
+
+    markdown_options = {
+      autolink:           true,
+      fenced_code_blocks: true,
+      lax_spacing:        true,
+      no_intra_emphasis:  true,
+      strikethrough:      true,
+      superscript:        true
+    }
+
+    renderer = Html.new(html_render_options)
+    markdown = Redcarpet::Markdown.new(renderer, markdown_options)
+    sanitize markdown.render(text)
   end
 end
