@@ -4,12 +4,14 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Edit</th>
     </tr>
   </thead>
   <tbody>
     <% @courses.each do |course| %>
       <tr>
         <td><%= link_to course.name, admin_course_path(course) %></td>
+        <td><%= link_to 'Edit', edit_admin_course_path(course), class: "ui button" %></td>
       </tr>
     <% end %>
   </tbody>
