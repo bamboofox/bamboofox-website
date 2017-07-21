@@ -3,6 +3,8 @@ class User < ApplicationRecord
   has_many :challenge_submissions
   has_many :challenges, through: :challenge_submissions
   has_many :identities
+  validates :name, presence: true
+  validates :email, presence: true
   resourcify
   rolify
   # Include default devise modules. Others available are:
