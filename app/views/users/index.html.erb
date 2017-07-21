@@ -11,9 +11,13 @@
       </tr>
     </thead>
     <tbody>
-      <% @users.each do | user | %>
+      <% @users.each_with_index do | user, i | %>
         <tr>
-          <td><%= user.id %></td>
+          <% if @users.first_page? %>
+            <td><%= i+1 %></td>
+          <% else %>
+            <td><%= (params[:page].to_i-1)*25+i+1 %></td>
+          <% end %>
           <td><%= profile_avatar user, class: "ui avatar image" %></td>
           <td><%= link_to user.name, user  %></td>
           <td><%= user.total_point  %></td>

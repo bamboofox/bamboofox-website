@@ -2,14 +2,18 @@
 <table class="ui table">
   <thead>
     <tr>
-      <th>User</th>
+      <th>#</th>
+      <th>Avatar</th>
+      <th>Name</th>
       <th>Point</th>
       <th>Last Submission</th>
     </tr>
   </thead>
   <tbody>
-    <% @users.each do |user|  %>
+    <% @users.each_with_index do | user, i |  %>
       <tr>
+        <td><%= i+1 %></td>
+        <td><%= profile_avatar user, class: "ui avatar image" %></td>
         <td><%= link_to user.name, user %></td>
         <td><%= user.total_point @course_id %></td>
         <td><%= user.last_challenge_submission_time %></td>

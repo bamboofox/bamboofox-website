@@ -11,14 +11,18 @@
 <table class="ui table">
   <thead>
     <tr>
-      <th>User</th>
+      <th>#</th>
+      <th>Avatar</th>
+      <th>Name</th>
       <th>Last time</th>
       <th>Point</th>
     </tr>
   </thead>
   <tbody>
-    <% @submissions.reverse.each do |submission| %>
+    <% @submissions.reverse.each_with_index do | submission, i | %>
       <tr>
+        <td><%= i+1 %></td>
+        <td><%= profile_avatar submission.user, class: "ui avatar image" %></td>
         <td><%= link_to submission.user.name, submission.user %></td>
         <td><%= submission.created_at.to_s[0..-5] %></td>
         <td><%= submission.challenge.point %></td>
