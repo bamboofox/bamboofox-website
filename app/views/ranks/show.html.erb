@@ -12,7 +12,11 @@
   <tbody>
     <% @users.each_with_index do | user, i |  %>
       <tr>
-        <td><%= i+1 %></td>
+        <% if @users.first_page? %>
+          <td><%= i+1 %></td>
+        <% else %>
+          <td><%= (params[:page].to_i-1)*25+i+1 %></td>
+        <% end %>
         <td><%= profile_avatar user, class: "ui avatar image" %></td>
         <td><%= link_to user.name, user %></td>
         <td><%= user.total_point @course_id %></td>
@@ -21,4 +25,7 @@
     <% end %>
   </tbody>
 </table>
-<%= link_to 'Back to Course', course_path(@course), class: "ui button" %>
+<%= paginate @users %>
+<% if params[:course_id] %>
+  <%= link_to 'Back to Course', course_path(@course), class: "ui button" %>
+<% end %>

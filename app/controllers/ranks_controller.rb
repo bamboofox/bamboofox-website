@@ -13,5 +13,6 @@ class RanksController < ApplicationController
         [user.total_point, -user.last_challenge_submission_time.to_i]
       end.reverse
     end
+    @users = Kaminari.paginate_array(@users).page params[:page]
   end
 end
