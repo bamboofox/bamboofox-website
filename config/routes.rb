@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   devise_for :users, controllers: { registrations: 'users/registrations', omniauth_callbacks: 'users/omniauth_callbacks' }
 
-  root 'courses#index'
+  root 'abouts#show'
+
+  # About
+  resource :about, only: [:show]
 
   # User
   resources :users, only: %i[index show]
@@ -27,7 +30,10 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    root 'courses#index'
+    root 'abouts#show'
+
+    # About
+    resource :about, only: %i[show edit update]
 
     # Rank
     resource :rank, only: [:show]

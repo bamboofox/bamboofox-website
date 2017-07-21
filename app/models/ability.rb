@@ -3,6 +3,7 @@ class Ability
 
   def initialize(user)
     user ||= User.new
+    can :read, About
     can :read, User
     can :read, Course
     can %i[read submit], Challenge
