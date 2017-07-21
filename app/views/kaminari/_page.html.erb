@@ -1,0 +1,9 @@
+<% if page.current? %>
+  <%= link_to url, class: 'item active', title: page, remote: remote do %>
+    <%= page %>
+  <% end %>
+<% else %>
+  <%= link_to url, class: 'item', title: page, remote: remote do %>
+    <%= page %>
+  <% end %>
+<% end %>

@@ -3,6 +3,7 @@
   <table class="ui table">
     <thead>
       <tr>
+        <th>#</th>
         <th>Avatar</th>
         <th>Name</th>
         <th>Point</th>
@@ -12,6 +13,7 @@
     <tbody>
       <% @users.each do | user | %>
         <tr>
+          <td><%= user.id %></td>
           <td><%= profile_avatar user, class: "ui avatar image" %></td>
           <td><%= link_to user.name, user  %></td>
           <td><%= user.total_point  %></td>
@@ -20,3 +22,5 @@
       <% end %>
     </tbody>
   </table>
+</div>
+<%= paginate @users %>
