@@ -11,13 +11,23 @@
   </thead>
   <tbody>
     <% @challenges.each_with_index do |challenge, i| %>
-      <tr style="<% if ChallengeSubmission.find_by(user_id: current_user.id, challenge_id: challenge.id) != nil %>background: #BCF5A9<% end %>">
-        <td><%= i+1 %></td>
-        <td><% if ChallengeSubmission.find_by(user_id: current_user.id, challenge_id: challenge.id) != nil %>✓ <% end %></td>
-        <td><%= link_to challenge.name, course_challenge_path(challenge.course,challenge) %></td>
-        <td><%= challenge.point %></td>
-        <td><%= ChallengeSubmission.where(challenge_id: challenge.id).count %></td>
-      </tr>
+      <% if current_user and ChallengeSubmission.find_by(user_id: current_user.id, challenge_id: challenge.id) != nil %>
+        <tr style="background: #BCF5A9">
+          <td><%= i+1 %></td>
+          <td>✓</td>
+          <td><%= link_to challenge.name, course_challenge_path(challenge.course,challenge) %></td>
+          <td><%= challenge.point %></td>
+          <td><%= ChallengeSubmission.where(challenge_id: challenge.id).count %></td>
+        </tr>
+      <% else %>
+        <tr>
+          <td><%= i+1 %></td>
+          <td></td>
+          <td><%= link_to challenge.name, course_challenge_path(challenge.course,challenge) %></td>
+          <td><%= challenge.point %></td>
+          <td><%= ChallengeSubmission.where(challenge_id: challenge.id).count %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
