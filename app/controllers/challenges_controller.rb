@@ -1,7 +1,6 @@
 class ChallengesController < ApplicationController
   load_and_authorize_resource :course
   load_and_authorize_resource :challenge, through: :course
-  before_action :authenticate_user!, only: [:submit]
 
   def index; end
 
