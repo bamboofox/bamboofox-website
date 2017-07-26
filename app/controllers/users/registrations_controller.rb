@@ -46,7 +46,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
     params[:user].delete :current_password if params[:user][:password].blank?
-    devise_parameter_sanitizer.permit(:account_update, keys: %i[avatar avatar_cache name])
+    devise_parameter_sanitizer.permit(:account_update) do |user_params|
+      user_params.permit(:name, :avatar, :avatar_cache, identities_attributes: %i[id _destroy])
+    end
   end
 
   def update_resource(resource, _params)

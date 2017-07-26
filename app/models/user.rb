@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_many :challenge_submissions
   has_many :challenges, through: :challenge_submissions
   has_many :identities
+  accepts_nested_attributes_for :identities, allow_destroy: true
   validates :name, presence: true
   validates :email, presence: true
   resourcify
