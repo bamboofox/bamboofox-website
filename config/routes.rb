@@ -35,6 +35,9 @@ Rails.application.routes.draw do
     # About
     resource :about, only: %i[show edit update]
 
+    # User
+    resources :users
+
     # Rank
     resource :rank, only: [:show]
 

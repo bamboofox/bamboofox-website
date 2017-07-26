@@ -1,0 +1,52 @@
+<%= form_with model: [:admin, user], class: "ui form" do |f| %>
+  <div class="field">
+    <%= f.label :avatar %>
+    <%= f.file_field :avatar %>
+    <%= f.hidden_field :avatar_cache %>
+  </div>
+  <div class="field">
+    <%= f.label :email %>
+    <div class="ui left icon input">
+      <%= f.email_field :email, autofocus: true %>
+      <i class="mail icon"></i>
+    </div>
+  </div>
+  <div class="field">
+    <%= f.label :name %>
+    <div class="ui left icon input">
+      <%= f.text_field :name %>
+      <i class="user icon"></i>
+    </div>
+  </div>
+  <div class="field">
+    <%= f.label :password %>
+    <div class="ui left icon input">
+      <%= f.password_field :password, autocomplete: "off" %>
+      <i class="lock icon"></i>
+    </div>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation %>
+    <div class="ui left icon input">
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      <i class="lock icon"></i>
+    </div>
+  </div>
+  <div class="field">
+    <% Role.all.each do |role| %>
+      <div class="ui checkbox">
+        <%= f.check_box :role_ids , {multiple: true}, role.id, nil %>
+        <%= f.label role.name %>
+      </div>
+    <% end %>
+  </div>
+  <div class="field">
+    <div class="ui checkbox">
+      <%= f.check_box :confirmed_at, {checked: true}, Time.now, nil %>
+      <%= f.label :skip_confirmation %>
+    </div>
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit", class: "ui positive button"%>
+  </div>
+<% end %>

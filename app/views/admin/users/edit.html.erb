@@ -1,0 +1,4 @@
+<%= render 'form', user: @user %>
+<p>
+  <%= button_to 'Delete', admin_user_path(@user), method: :delete, data: { confirm: 'Are you sure?' }, class: 'ui negative button' %>
+</p>

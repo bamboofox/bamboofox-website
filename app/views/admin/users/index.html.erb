@@ -1,0 +1,33 @@
+<h1>Users</h1>
+<%= link_to 'New User', new_admin_user_path, class: "ui positive button" %>
+<div class="ui items">
+  <table class="ui table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Avatar</th>
+        <th>Name</th>
+        <th>Point</th>
+        <th>Last Submission Time</th>
+        <th>Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each_with_index do | user, i | %>
+        <tr>
+          <% if @users.first_page? %>
+            <td><%= i+1 %></td>
+          <% else %>
+            <td><%= (params[:page].to_i-1)*25+i+1 %></td>
+          <% end %>
+          <td><%= profile_avatar user, class: "ui avatar image" %></td>
+          <td><%= link_to user.name, admin_user_path(user)  %></td>
+          <td><%= user.total_point  %></td>
+          <td><%= user.last_challenge_submission_time %></td>
+          <td><%= link_to 'Edit', edit_admin_user_path(user), class: 'ui button' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<%= paginate @users %>
