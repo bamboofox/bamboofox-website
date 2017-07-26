@@ -255,7 +255,7 @@ Devise.setup do |config|
 
   config.omniauth :facebook, Figaro.env.facebook_id, Figaro.env.facebook_secret
   config.omniauth :github, Figaro.env.github_id, Figaro.env.github_secret
-  config.omniauth :google_oauth2, Figaro.env.google_id, Figaro.env.google_secret
+  config.omniauth :google_oauth2, Figaro.env.google_id, Figaro.env.google_secret, verify_iss: false
   config.omniauth :nctu, Figaro.env.nctu_id, Figaro.env.nctu_secret
 
   # ==> Warden configuration
