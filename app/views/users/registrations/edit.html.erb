@@ -48,13 +48,17 @@
     </div>
   </div>
   <h3>Unlink social media</h3>
-  <div class="field">
-    <%= f.fields_for :identities do |identity| %>
-      <div class="ui toggle checkbox">
-        <%= identity.check_box :_destroy, {}, false, true %>
-        <%= identity.label :_destroy, identity.object.provider %>
-      </div>
-    <% end %>
+  <div class="ui clearing basic compact segment">
+    <div class="ui horizontal segments">
+      <%= f.fields_for :identities do |identity| %>
+        <div class="ui left floated compact segment">
+          <div class="ui toggle checkbox">
+            <%= identity.check_box :_destroy, {}, false, true %>
+            <%= identity.label :_destroy, identity.object.provider %>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
   <div class="actions">
     <%= f.submit "Update", class: "ui positive button"%>
