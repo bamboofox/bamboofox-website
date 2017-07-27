@@ -23,7 +23,7 @@
         <%= icon_avatar current_user,class: "ui avatar image" %>
         <%= current_user.email %>
       <% end %>
-      <%= link_to admin_root_path, class: "item" do %>
+      <%= link_to request.base_url+'/admin'+request.path, class: "item" do %>
         <i class="spy icon"></i>
         Admin
       <% end %>
