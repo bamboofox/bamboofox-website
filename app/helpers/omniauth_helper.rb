@@ -5,22 +5,22 @@ module OmniauthHelper
       when :facebook
         link_to omniauth_authorize_path(resource_name, provider), class: 'ui facebook button' do
           tag :i, class: 'facebook icon'
-          'Facebook'
+          provider.to_s.camelize
         end
       when :github
         link_to omniauth_authorize_path(resource_name, provider), class: 'ui github button' do
           tag :i, class: 'github icon'
-          'Github'
+          provider.to_s.camelize
         end
-      when :google_oauth2
+      when :google
         link_to omniauth_authorize_path(resource_name, provider), class: 'ui google plus button' do
           tag :i, class: 'google plus icon'
-          'Google'
+          provider.to_s.camelize
         end
       when :nctu
         link_to omniauth_authorize_path(resource_name, provider), class: 'ui nctu button' do
           tag :i, class: 'nctu icon'
-          'Nctu'
+          provider.to_s.camelize
         end
       end
     end.join)

@@ -12,7 +12,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   alias facebook all
   alias github all
-  alias google_oauth2 all
+  alias google all
   alias nctu all
 
   def failure

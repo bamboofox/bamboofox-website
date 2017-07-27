@@ -54,7 +54,7 @@
         <div class="ui left floated compact segment">
           <div class="ui toggle checkbox">
             <%= identity.check_box :_destroy, {}, false, true %>
-            <%= identity.label :_destroy, identity.object.provider %>
+            <%= identity.label :_destroy, identity.object.provider.camelize %>
           </div>
         </div>
       <% end %>
