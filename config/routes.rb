@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   # Rank
   resource :rank, only: [:show]
 
+  # Submission
+  resources :challenge_submissions, only: %i[index show]
+
   # Nested route
   resources :courses, only: %i[index show] do
     # Challenge
@@ -27,6 +30,9 @@ Rails.application.routes.draw do
 
     # Rank
     resource :rank, only: [:show]
+
+    # Submission
+    resources :challenge_submissions, only: %i[index show]
   end
 
   namespace :admin do

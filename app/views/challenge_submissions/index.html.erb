@@ -1,0 +1,37 @@
+<h1>Submissions</h1>
+<table class="ui table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Avatar</th>
+      <th>Name</th>
+      <th>Challenge</th>
+      <th>Point</th>
+      <th>Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @challenge_submissions.each_with_index do | challenge_submission, i |  %>
+      <tr>
+        <td>
+          <%= link_to [challenge_submission.course, challenge_submission] do %>
+            <% if @challenge_submissions.first_page? %>
+              <%= i+1 %>
+            <% else %>
+              <%= (params[:page].to_i-1)*25+i+1 %>
+            <% end %>
+          <% end %>
+        </td>
+        <td><%= profile_avatar challenge_submission.user, class: "ui avatar image" %></td>
+        <td><%= link_to challenge_submission.user.name, challenge_submission.user %></td>
+        <td><%= link_to challenge_submission.challenge.name , [challenge_submission.course, challenge_submission.challenge] %></td>
+        <td><%= challenge_submission.challenge.point %></td>
+        <td><%= challenge_submission.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @challenge_submissions %>
+<% if params[:course_id] %>
+  <%= link_to 'Back to Course', course_path(@course), class: "ui button" %>
+<% end %>

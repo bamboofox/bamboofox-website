@@ -8,6 +8,7 @@ class Ability
     can :read, Course
     can %i[read submit], Challenge
     can :read, Material
+    can :read, ChallengeSubmission
     can :manage, user
     can :manage, :all if user.has_role? :admin
   end
