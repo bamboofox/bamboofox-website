@@ -24,7 +24,7 @@ class Admin::ChallengesController < AdminController
     if @challenge.update(challenge_params)
       redirect_to admin_course_challenge_path(@course, @challenge), notice: 'Challenge was successfully updated!'
     else
-      render 'edit'
+      render :edit
     end
   end
 

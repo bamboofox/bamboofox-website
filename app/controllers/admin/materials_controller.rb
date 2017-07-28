@@ -22,7 +22,7 @@ class Admin::MaterialsController < AdminController
     if @material.update(material_params)
       redirect_to admin_course_material_path(@course, @material), notice: 'Material was successfully updated!'
     else
-      render 'edit'
+      render :edit
     end
   end
 

@@ -21,7 +21,7 @@ class Admin::CoursesController < AdminController
     if @course.update(course_params)
       redirect_to admin_course_path(@course), notice: 'Course was successfully updated!'
     else
-      render 'edit'
+      render :edit
     end
   end
 
