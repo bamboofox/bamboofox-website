@@ -1,67 +1,193 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>The page you were looking for doesn't exist (404)</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
-
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
-
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
-
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-  </style>
+  <head>
+    <title>The page you were looking for doesn't exist (404)</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style>
+		html, body {
+			height: 100vh;
+			width: 100vw;
+			margin: 0;
+			background-color: white;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			font-family: monospace;
+			font-weight: 700;
+			font-size: 20px;
+			color: #99ff99;
+		}
+		a {
+			color: inherit;
+			text-decoration: none;
+		}
+		.title {
+			text-align: center;
+			color: black;
+		}
+		.title1 {
+			font-size: 4rem;
+		}
+		.title2 {
+			font-size: 1rem;
+		}
+		.terminal {
+			display: flex;
+			flex-direction: column;
+			background-color: black;
+      width: 800px;
+      height: 600px;
+			border-radius: 20px;
+			box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.75);
+		}
+		.terminal-bar {
+			height: 30px;
+			display: flex;
+      flex: 0 0 auto;
+			align-items: center;
+			background-color: darkgray;
+			border-radius: 10px 10px 0px 0px;
+		}
+		.terminal-button {
+			height: 20px;
+			width: 20px;
+			border-radius: 50%;
+			margin-left: 5px;
+		}
+		.terminal-button-red {
+			background-color: red;
+		}
+		.terminal-button-yellow {
+			background-color: yellow;
+		}
+		.terminal-button-green {
+			background-color: green;
+		}
+		.terminal-title {
+			flex-grow: 1;
+			font-size: 0.8rem;
+			color: black;
+			font-weight: 1000;
+			text-align: center;
+		}
+		.terminal-emulator {
+      flex-grow: 1;
+			padding-left: 5px;
+      overflow-y: scroll;
+		}
+		.terminal-input{
+      outline: none;
+      background: none;
+      border: none;
+			font-family: monospace;
+			font-weight: 700;
+			color: #99ff99;
+			font-size: 20px;
+		}
+		</style>
 </head>
 
-<body class="rails-default-error-page">
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
+<body>
+	<p class="title">
+		<span class="title1">404</span>
+		<br>
+		<span class="title2">page not found</span>
+	</p>
+	<div class="terminal">
+		<div class="terminal-bar">
+			<button class="terminal-button terminal-button-red">x</button>
+			<button class="terminal-button terminal-button-yellow">-</button>
+			<button class="terminal-button terminal-button-green">+</button>
+			<div class="terminal-title">guest@bamboofox.cs.nctu.edu.tw</div>
+		</div>
+		<div class="terminal-emulator" id="terminal-emulator">
+      <span id="terminal-history" id="terminal-history">
+      </span>
+      <input type="text" class="terminal-input" id="terminal-input" autofucus>
+      </span>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
-  </div>
+	</div>
+  <script>
+	class TerminalEmulator {
+		constructor() {
+			this.prompt = 'guest@bamboofox.cs.nctu.edu.tw:~# ';
+      this.printprompt();
+		}
+    get history()
+    {
+      return document.getElementById('terminal-history');
+    }
+    get input()
+    {
+      return document.getElementById('terminal-input');
+    }
+    process(event)
+    {
+      if(event.key !== 'Enter')
+        return;
+      this.history.innerHTML = this.history.innerHTML + this.input.value;
+      this.history.innerHTML += '<br>';
+      const command = this.input.value.trim();
+      this.input.value = '';
+      if(command === 'help')
+        this.printhelp();
+      else if (command === 'clear')
+        this.clear();
+    }
+    printhelp()
+    {
+      this.history.innerHTML += 'Bamboofox github repo: <a href="https://github.com/bamboofox/bamboofox-website">https://github.com/bamboofox/bamboofox-website</a><br>'+
+        'Bamboofox blog: <a href="https://bamboofox.github.io/">https://bamboofox.github.io/</a><br>'+
+        'Bamboofox facebook: <a href="https://www.facebook.com/NCTUCSC/">https://www.facebook.com/NCTUCSC/</a><br>'+
+        'Bamboofox github: <a href="https://github.com/bamboofox">https://github.com/bamboofox</a><br>'+
+        'Bamboofox slack: <a href="https://bamboofox.herokuapp.com/">https://bamboofox.herokuapp.com/</a><br>'
+      this.printprompt();
+    }
+    printprompt()
+    {
+      this.history.innerHTML += this.prompt;
+    }
+    ready()
+    {
+      this.input.focus();
+      this.input.addEventListener('keydown', this.process.bind(this));
+    }
+		clear() {
+			this.history.innerHTML = '';
+      this.printprompt();
+		}
+		async enter(content) {
+			function sleep(ms) {
+				return new Promise(resolve => setTimeout(resolve, ms));
+			}
+			var randomSpeed = (max, min) => {
+				return Math.random() * (max - min) + min;
+			}
+			var speed = randomSpeed(150, 200);
+
+			for (var c of content) {
+				await sleep(speed);
+				this.history.innerHTML += c;
+			}
+			this.history.innerHTML += '<br>';
+		}
+		async response(content) {
+			this.history.innerHTML += content;
+			this.history.innerHTML += '<br>';
+			this.printprompt();
+		}
+	};
+	var terminal_emulator = new TerminalEmulator;
+	terminal_emulator.enter('cat /dev/brain')
+		.then(terminal_emulator.response.bind(terminal_emulator, 'cat: /dev/brain: No such file or directory'))
+		.then(terminal_emulator.enter.bind(terminal_emulator, 'cat /etc/shadow'))
+		.then(terminal_emulator.response.bind(terminal_emulator, 'cat: /etc/shadow: Permission denied'))
+		.then(terminal_emulator.enter.bind(terminal_emulator, 'cat flag'))
+		.then(terminal_emulator.response.bind(terminal_emulator, 'cat: flag: No such file or directory'))
+		.then(terminal_emulator.enter.bind(terminal_emulator, 'help'))
+		.then(terminal_emulator.printhelp.bind(terminal_emulator))
+		.then(terminal_emulator.ready.bind(terminal_emulator))
+  </script>
 </body>
 </html>
