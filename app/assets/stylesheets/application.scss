@@ -6,6 +6,9 @@ body{
   min-height: 100vh;
   flex-direction: column;
 }
+header{
+  flex: none;
+}
 article{
   flex: 1 0 auto;
 }
