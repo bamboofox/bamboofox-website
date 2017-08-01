@@ -9,14 +9,14 @@
   </head>
   <body>
     <%= render 'admin/header' %>
-    <article class="ui centered aligned grid container">
+    <main class="ui centered aligned grid container">
       <div class="sixteen wide mobile sixteen wide tablet twelve wide computer column">
         <div class="ui segment">
           <%= render 'layouts/flash' %>
           <%= yield %>
         </div>
       </div>
-    </article>
+    </main>
     <%= render 'layouts/footer' %>
   </body>
 </html>

@@ -6,9 +6,15 @@ body{
   min-height: 100vh;
   flex-direction: column;
 }
+
 header{
   flex: none;
 }
-article{
+
+main{
   flex: 1 0 auto;
+}
+
+footer{
+  flex: none;
 }
