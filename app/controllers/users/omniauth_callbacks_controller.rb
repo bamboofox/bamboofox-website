@@ -25,11 +25,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def link_omniauth
     if current_user.link_omniauth(request.env['omniauth.auth']).save
       set_flash_message! :notice, :success, kind: 'Oauth'
-      sign_in_and_redirect current_user, event: :authentication
     else
       set_flash_message! :alert, :failure, kind: 'Oauth', reason: 'You already link account'
-      redirect_to new_user_session_path
     end
+    sign_in_and_redirect current_user, event: :authentication
   end
 
   def login_omniauth
