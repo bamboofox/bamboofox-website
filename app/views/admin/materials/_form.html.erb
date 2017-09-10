@@ -4,6 +4,16 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
+    <div class="ui checkbox">
+      <%= f.check_box :is_external %>
+      <%= f.label :is_external %>
+    </div>
+  </div>
+  <div class="field">
+    <%= f.label :url %>
+    <%= f.text_field :url %>
+  </div>
+  <div class="field">
     <%= f.label :attachment %><br>
     <%= f.file_field :attachment %>
   </div>

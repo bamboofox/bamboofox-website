@@ -1,2 +1,6 @@
 <h1><%= @material.name%></h1>
-<%= link_to "Download", @material.attachment.url, target: "_blank" %>
+<% if @material.is_external %>
+  <%= link_to "Download", @material.url, target: "_blank" %>
+<% else %>
+  <%= link_to "Download", @material.attachment.url, target: "_blank" %>
+<% end %>

@@ -34,6 +34,6 @@ class Admin::MaterialsController < AdminController
   private
 
   def material_params
-    params.require(:material).permit(:name, :attachment)
+    params.require(:material).permit(:name, :is_external, :url, :attachment)
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_170_721_111_945) do
+ActiveRecord::Schema.define(version: 20_170_910_105_139) do
   create_table 'abouts', force: :cascade do |t|
     t.text 'content'
     t.datetime 'created_at', null: false
@@ -62,6 +62,8 @@ ActiveRecord::Schema.define(version: 20_170_721_111_945) do
     t.datetime 'updated_at', null: false
     t.string 'attachment'
     t.integer 'course_id'
+    t.string 'url'
+    t.boolean 'is_external'
     t.index ['course_id'], name: 'index_materials_on_course_id'
   end
 
