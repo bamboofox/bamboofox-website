@@ -62,7 +62,7 @@ gem 'rails_best_practices-rake_task', require: false
 gem 'devise'
 gem 'cancancan'
 gem 'rolify'
-gem 'semantic-ui-sass', git: 'https://github.com/doabit/semantic-ui-sass.git'
+gem 'semantic-ui-sass'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick', require: false
 gem 'omniauth'
