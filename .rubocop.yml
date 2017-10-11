@@ -1,5 +1,6 @@
 AllCops:
   Exclude:
+    - 'public/**/*'
     - 'db/migrate/*'
     - 'bin/**/*'
     - 'vendor/**/*'
