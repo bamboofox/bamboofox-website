@@ -1,5 +1,5 @@
 GIT
-  remote: https://github.com/piotrmurach/loaf
+  remote: https://github.com/piotrmurach/loaf.git
   revision: 7f79541d4f45de18371bb91d2361e0668439e70c
   specs:
     loaf (0.5.0)
