@@ -32,6 +32,3 @@
   </tbody>
 </table>
 <%= paginate @challenge_submissions %>
-<% if params[:course_id] %>
-  <%= link_to 'Back to Course', course_path(@course), class: "ui button" %>
-<% end %>

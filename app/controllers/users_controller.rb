@@ -3,7 +3,11 @@ class UsersController < ApplicationController
 
   def index
     @users = User.accessible_by(current_ability, :index).page params[:page]
+    breadcrumb 'Users', users_path
   end
 
-  def show; end
+  def show
+    breadcrumb 'Users', users_path
+    breadcrumb @user.name, @user
+  end
 end

@@ -1,0 +1,10 @@
+<div class="ui huge breadcrumb">
+  <% breadcrumbs.each_with_index do |breadcrumb, index| %>
+    <% if index == breadcrumbs.count-1 %>
+      <%= link_to breadcrumb.first, breadcrumb.second, class: "active section" %>
+    <% else %>
+      <%= link_to breadcrumb.first, breadcrumb.second, class: "section" %>
+      <div class="divider"> / </div>
+    <% end %>
+  <% end %>
+</ul>

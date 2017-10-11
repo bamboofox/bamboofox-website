@@ -11,8 +11,13 @@
     <%= render 'admin/header' %>
     <main class="ui centered aligned grid container">
       <div class="sixteen wide mobile sixteen wide tablet twelve wide computer column">
+        <%= render 'layouts/flash' %>
+        <div class="row">
+          <div class="ui basic segment">
+            <%= render 'layouts/breadcrumb' %>
+          </div>
+        </div>
         <div class="ui segment">
-          <%= render 'layouts/flash' %>
           <%= yield %>
         </div>
       </div>
