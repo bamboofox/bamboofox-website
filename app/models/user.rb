@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
-  has_many :challenge_submissions
-  has_many :challenges, through: :challenge_submissions
-  has_many :identities
+  has_many :challenge_submissions, dependent: :destroy
+  has_many :challenges, through: :challenge_submissions, dependent: :nullify
+  has_many :identities, dependent: :destroy
   accepts_nested_attributes_for :identities, allow_destroy: true
   validates :name, presence: true
   validates :email, presence: true
