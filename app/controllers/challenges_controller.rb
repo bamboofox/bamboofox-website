@@ -1,16 +1,14 @@
 class ChallengesController < ApplicationController
   load_and_authorize_resource :course
   load_and_authorize_resource :challenge, through: :course
-  before_action :add_course_breadcrumbs
   before_action :require_login!, only: [:submit]
+  before_action :add_course_breadcrumbs
+  before_action -> { breadcrumb 'Challenges', [@course, :challenges] }
+  before_action -> { breadcrumb @challenge.name, [@course, @challenge] }, only: [:show]
 
-  def index
-    breadcrumb 'Challenges', [@course, :challenges]
-  end
+  def index; end
 
   def show
-    breadcrumb 'Challenges', [@course, :challenges]
-    breadcrumb @challenge.name, [@course, @challenge]
     @submissions = @challenge.submissions.order('updated_at ASC')
   end
 

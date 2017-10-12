@@ -1,6 +1,7 @@
 class Admin::AboutsController < AdminController
   before_action :set_about
   authorize_resource
+  before_action { breadcrumb 'About', admin_about_path }
 
   def show; end
 

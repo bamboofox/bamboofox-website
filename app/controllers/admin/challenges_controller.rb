@@ -1,6 +1,9 @@
 class Admin::ChallengesController < AdminController
   load_and_authorize_resource :course
   load_and_authorize_resource :challenge, through: :course
+  before_action :add_admin_course_breadcrumbs
+  before_action { breadcrumb 'Challenges', [:admin, @course, :challenges] }
+  before_action -> { breadcrumb @challenge.name, [:admin, @course, @challenge] }, only: %i[show edit]
 
   def index; end
 

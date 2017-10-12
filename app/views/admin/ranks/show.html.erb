@@ -28,6 +28,3 @@
   </tbody>
 </table>
 <%= paginate @users %>
-<% if params[:course_id] %>
-  <%= link_to 'Back to Course', admin_course_path(@course), class: "ui button" %>
-<% end %>

@@ -1,5 +1,7 @@
 class Admin::UsersController < AdminController
   load_and_authorize_resource
+  before_action { breadcrumb 'Users', admin_users_path }
+  before_action -> { breadcrumb @user.name, [:admin, @user] }, only: %i[show edit]
 
   def index
     @users = User.accessible_by(current_ability, :index).page params[:page]

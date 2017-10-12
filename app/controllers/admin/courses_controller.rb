@@ -1,5 +1,7 @@
 class Admin::CoursesController < AdminController
   load_and_authorize_resource
+  before_action { breadcrumb 'Courses', :admin_courses_path }
+  before_action -> { breadcrumb @course.name, [:admin, @course] }, only: %i[show edit]
 
   def index; end
 

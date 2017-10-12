@@ -17,7 +17,6 @@ class ChallengeSubmissionsController < ApplicationController
   def show
     @challenge_submission = ChallengeSubmission.find(params[:id])
     add_course_breadcrumbs
-
     breadcrumb 'Challenge Submissions', [@course, :challenge_submissions]
     breadcrumb @challenge_submission.id.to_s, [@course, @challenge_submission]
   end

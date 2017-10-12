@@ -1,6 +1,9 @@
 class Admin::MaterialsController < AdminController
   load_and_authorize_resource :course
   load_and_authorize_resource :material, through: :course
+  before_action :add_admin_course_breadcrumbs
+  before_action { breadcrumb 'Materials', [:admin, @course, :materials] }
+  before_action -> { breadcrumb @material.name, [:admin, @course, @material] }, only: %i[show edit]
 
   def index; end
 
