@@ -25,7 +25,7 @@ class Admin::UsersController < AdminController
   def update
     params[:user][:role_ids] ||= []
     if params[:user][:password].present?
-      if @user.update_attributes(user_params)
+      if @user.update(user_params)
         redirect_to admin_user_path(@user), notice: 'User was successfully updated!'
       else
         render :edit

@@ -8,16 +8,16 @@ module DeviseHelper
                       resource: resource.class.model_name.human.downcase)
 
     html = <<-HTML
-		<div class="ui negative message">
-			<i class="close icon"></i>
-			<div class="header">
-				#{sentence}
-			</div>
-			<ul class="list">
-				#{messages}
-			</ul>
-		</div>
-		HTML
+        <div class="ui negative message">
+            <i class="close icon"></i>
+            <div class="header">
+                #{sentence}
+            </div>
+            <ul class="list">
+                #{messages}
+            </ul>
+        </div>
+    HTML
     sanitize html
   end
 
