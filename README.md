@@ -1,6 +1,9 @@
 # bamboofox-website
 
 [![build status][travis-image]][travis-url]
+[![Rawsec's CyberSecurity Inventory](https://inventory.rawsec.ml/img/badges/Rawsec-inventoried-FF5050_flat.svg)](https://inventory.rawsec.ml/ctf_platforms.html#bamboofox)
+[![GitHub stars](https://img.shields.io/github/stars/bamboofox/bamboofox-website.svg)](https://github.com/bamboofox/bamboofox-website/stargazers)
+[![GitHub license](https://img.shields.io/github/license/bamboofox/bamboofox-website.svg)](https://github.com/bamboofox/bamboofox-website/blob/master/LICENSE)
 
 ## Requirements
 
