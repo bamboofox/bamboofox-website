@@ -15,7 +15,7 @@ sudo apt install libmysqlclient-dev
 ## Ruby and Rails versions
 
 Ruby 2.4.0 or newer
-Rails 5.1.0 or newer
+Rails 5.2.0 or newer
 
 ## Installation
 
@@ -34,9 +34,49 @@ See on http://localhost:3000
 
 ## Deploy
 
+
+### Setup application config
+
 Reference `config/application.yml.example`
 
 Create `config/application.yml`
+
+`config/application.yml`
+
+```
+# rake secret
+secret_key_base: 73fd0783500cc42096f163859b5062376ccb90416a9bf920c89e43981986493029d20b58e088fc04444d571829381aa5e246ce364b9c16830128eb10757e65a9
+host: bamboofox.nctucs.net
+mailer_sender: no-reply@bamboofox.nctucs.net
+password: password
+facebook_id: facebook_id
+facebook_secret: facebook_secret
+github_id: github_id
+github_secret: github_secret
+google_id: google_id
+google_secret: google_secret
+nctu_id: nctu_id
+nctu_secret: nctu_secret
+```
+
+### Setup secret key
+
+Remove `config/credentials.yml.enc`
+
+Reference `config/application.yml.example`
+
+Generate `config/master.key` and `config/credentials.yml.enc`
+
+```bash
+rm config/application.yml.enc
+rails credentials:edit
+```
+
+`config/credentials.yml`
+
+```
+secret_key_base: <%= Figaro.env.secret_key_base %>
+```
 
 ### Setup seed data and compile assets
 
