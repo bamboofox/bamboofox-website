@@ -5,6 +5,14 @@
 [![GitHub stars](https://img.shields.io/github/stars/bamboofox/bamboofox-website.svg)](https://github.com/bamboofox/bamboofox-website/stargazers)
 [![GitHub license](https://img.shields.io/github/license/bamboofox/bamboofox-website.svg)](https://github.com/bamboofox/bamboofox-website/blob/master/LICENSE)
 
+## Features
+
+- Admin panel at `admin/` url
+- Multiple OAuth provider supported
+- Multi-course design
+- Material upload or by remote url
+- Rank by course or in all
+
 ## Requirements
 
 ```bash
