@@ -7,8 +7,6 @@ class ApplicationController < ActionController::Base
   end
 
   def require_login!
-    unless user_signed_in?
-      redirect_to new_user_session_path, notice: 'You need to sign in or sign up before continuing.'
-    end
+    redirect_to new_user_session_path, notice: 'You need to sign in or sign up before continuing.' unless user_signed_in?
   end
 end
