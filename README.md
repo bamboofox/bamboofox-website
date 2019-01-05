@@ -45,13 +45,18 @@ See on http://localhost:3000
 
 ### Setup application config
 
-Reference `config/application.yml.example`
+Remove `config/credentials.yml.enc`
 
-Create `config/application.yml`
+Reference `config/credentials.yml.example` and run `rails credentials:edit` to edit your application config
 
-`config/application.yml`
-
+```bash
+rm config/credentials.yml.enc
+rails credentials:edit
 ```
+
+### Example config
+
+```yml
 # rake secret
 secret_key_base: 73fd0783500cc42096f163859b5062376ccb90416a9bf920c89e43981986493029d20b58e088fc04444d571829381aa5e246ce364b9c16830128eb10757e65a9
 host: bamboofox.nctucs.net
@@ -65,25 +70,6 @@ google_id: google_id
 google_secret: google_secret
 nctu_id: nctu_id
 nctu_secret: nctu_secret
-```
-
-### Setup secret key
-
-Remove `config/credentials.yml.enc`
-
-Reference `config/application.yml.example`
-
-Generate `config/master.key` and `config/credentials.yml.enc`
-
-```bash
-rm config/application.yml.enc
-rails credentials:edit
-```
-
-`config/credentials.yml`
-
-```
-secret_key_base: <%= Figaro.env.secret_key_base %>
 ```
 
 ### Setup seed data and compile assets

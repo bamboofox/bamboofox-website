@@ -27,4 +27,4 @@ production:
   socket: /var/run/mysqld/mysqld.sock
   database: bamboofox
   username: root
-  password: <%= Figaro.env.password %>
+  password: <%= Rails.application.credentials.password %>

@@ -13,7 +13,7 @@ Devise.setup do |config|
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
   # config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
-  config.mailer_sender = Figaro.env.mailer_sender
+  config.mailer_sender = Rails.application.credentials.mailer_sender
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -253,10 +253,16 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
 
-  config.omniauth :facebook, Figaro.env.facebook_id, Figaro.env.facebook_secret
-  config.omniauth :github, Figaro.env.github_id, Figaro.env.github_secret
-  config.omniauth :google_oauth2, Figaro.env.google_id, Figaro.env.google_secret, name: 'google'
-  config.omniauth :nctu, Figaro.env.nctu_id, Figaro.env.nctu_secret
+  config.omniauth :facebook, Rails.application.credentials.facebook_id, Rails.application.credentials.facebook_secret
+  config.omniauth :github,
+                  Rails.application.credentials.github_id,
+                  Rails.application.credentials.github_secret
+  config.omniauth :google_oauth2,
+                  Rails.application.credentials.google_id,
+                  Rails.application.credentials.google_secret, name: 'google'
+  config.omniauth :nctu,
+                  Rails.application.credentials.nctu_id,
+                  Rails.application.credentials.nctu_secret
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

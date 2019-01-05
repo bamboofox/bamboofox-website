@@ -71,11 +71,11 @@ Rails.application.configure do
 
   # Custom
 
-  config.action_mailer.default_url_options = { host: Figaro.env.host, protocol: 'https' }
+  config.action_mailer.default_url_options = { host: Rails.application.credentials.host, protocol: 'https' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: Figaro.env.host,
-    domain: Figaro.env.host
+    address: Rails.application.credentials.host,
+    domain: Rails.application.credentials.host
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to

@@ -71,7 +71,6 @@ gem 'rails_best_practices-rake_task', require: false
 # Use mysql as the database for production
 gem 'mysql2'
 
-gem 'figaro'
 gem 'devise'
 gem 'cancancan'
 gem 'rolify'
