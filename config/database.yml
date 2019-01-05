@@ -26,5 +26,5 @@ production:
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   socket: /var/run/mysqld/mysqld.sock
   database: bamboofox
-  username: root
+  username: bamboofox
   password: <%= Rails.application.credentials.password %>
