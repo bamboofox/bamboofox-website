@@ -23,7 +23,7 @@
           <td><%= profile_avatar user, class: "ui avatar image" %></td>
           <td><%= link_to user.name, user  %></td>
           <td><%= user.total_point  %></td>
-          <td><%= user.last_challenge_submission_time %></td>
+          <td><%= user.last_challenge_submission_time.localtime %></td>
         </tr>
       <% end %>
     </tbody>

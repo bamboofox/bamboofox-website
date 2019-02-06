@@ -24,7 +24,7 @@
         <td><%= i+1 %></td>
         <td><%= profile_avatar submission.user, class: "ui avatar image" %></td>
         <td><%= link_to submission.user.name, submission.user %></td>
-        <td><%= submission.created_at.to_s[0..-5] %></td>
+        <td><%= submission.created_at.localtime %></td>
         <td><%= submission.challenge.point %></td>
       </tr>
     <% end %>

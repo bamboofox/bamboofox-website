@@ -31,7 +31,7 @@
       <tr>
         <td><%= link_to submission.challenge.name, admin_course_challenge_path(submission.course, submission.challenge) %></td>
         <td><%= submission.challenge.point %></td>
-        <td><%= submission.created_at.to_s %></td>
+        <td><%= submission.created_at.localtime %></td>
       </tr>
     <% end %>
   </tbody>

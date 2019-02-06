@@ -26,7 +26,7 @@
         <td><%= link_to challenge_submission.user.name, challenge_submission.user %></td>
         <td><%= link_to challenge_submission.challenge.name , [challenge_submission.course, challenge_submission.challenge] %></td>
         <td><%= challenge_submission.challenge.point %></td>
-        <td><%= challenge_submission.created_at %></td>
+        <td><%= challenge_submission.created_at.localtime %></td>
       </tr>
     <% end %>
   </tbody>
