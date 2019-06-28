@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_170_910_105_139) do
+ActiveRecord::Schema.define(version: 20_190_628_140_543) do
   create_table 'abouts', force: :cascade do |t|
     t.text 'content'
     t.datetime 'created_at', null: false
@@ -97,6 +97,7 @@ ActiveRecord::Schema.define(version: 20_170_910_105_139) do
     t.datetime 'updated_at', null: false
     t.string 'avatar'
     t.string 'name'
+    t.boolean 'is_email_visible'
     t.index ['email'], name: 'index_users_on_email', unique: true
     t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
   end

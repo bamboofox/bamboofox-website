@@ -8,9 +8,11 @@
       <div class="header">
         <%= @user.name %>
       </div>
+      <% if @user.is_email_visible %>
       <div class="meta">
         Email: <%= @user.email %>
       </div>
+      <% end %>
       <div class="meta">
         Score: <%= @user.total_point %>
       </div>
