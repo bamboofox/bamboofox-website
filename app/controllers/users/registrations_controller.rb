@@ -47,7 +47,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def configure_account_update_params
     params[:user].delete :current_password if params[:user][:password].blank?
     devise_parameter_sanitizer.permit(:account_update) do |user_params|
-      user_params.permit(:name, :avatar, :avatar_cache, identities_attributes: %i[id _destroy])
+      user_params.permit(:email, :name, :avatar, :avatar_cache, identities_attributes: %i[id _destroy])
     end
   end
 
