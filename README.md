@@ -40,8 +40,9 @@ rails server
 
 See on http://localhost:3000
 
-## Deploy
+**First registered user will be admin**
 
+## Deploy
 
 ### Setup application config
 

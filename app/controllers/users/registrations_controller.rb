@@ -10,6 +10,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
+    @user.add_role :admin if User.first == @user
   end
 
   # GET /resource/edit
