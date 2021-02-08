@@ -74,7 +74,7 @@ gem 'devise'
 gem 'cancancan'
 gem 'rolify'
 gem 'semantic-ui-sass'
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
 gem 'mini_magick', require: false
 gem 'omniauth'
 gem 'omniauth-facebook'
