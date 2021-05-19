@@ -135,7 +135,9 @@ GEM
     mime-types (3.3)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2019.1009)
-    mimemagic (0.3.3)
+    mimemagic (0.3.10)
+      nokogiri (~> 1)
+      rake
     mini_magick (4.9.5)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
@@ -177,7 +179,8 @@ GEM
     parser (2.6.5.0)
       ast (~> 2.4.0)
     public_suffix (4.0.1)
-    puma (3.12.2)
+    puma (4.3.8)
+      nio4r (~> 2.0)
     rack (2.0.7)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -335,7 +338,7 @@ DEPENDENCIES
   omniauth-github
   omniauth-google-oauth2
   omniauth-nctu
-  puma (~> 3.11)
+  puma (~> 4.3)
   rails (~> 5.2.0)
   rails_best_practices
   rails_best_practices-rake_task
